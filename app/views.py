@@ -5,8 +5,12 @@ Werkzeug Documentation:  https://werkzeug.palletsprojects.com/
 This file creates your application.
 """
 
-from app import app
-from flask import render_template, request, redirect, url_for
+from app import app,db
+import os
+from flask import render_template, request, redirect, url_for, flash, send_from_directory
+from app.forms import AddPropertyForm
+from werkzeug.utils import secure_filename
+from app.models import Property
 
 
 ###
@@ -27,7 +31,48 @@ def about():
 
 ###
 # The functions below should be applicable to all Flask apps.
-###
+###@app.route('/properties/create')
+@app.route('/properties/create',methods = ['POST','GET'])
+def create():
+    form = AddPropertyForm()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            title = form.title.data
+            numberofbed = form.numberofbed.data
+            numberofbath = form.numberofbath.data
+            location = form.location.data
+            price = form.price.data
+            r_type  = form.residence_type.data
+            desc = form.description.data
+            img = form.image.data
+            imgName = secure_filename(img.filename)
+            img.save(os.path.join(app.config['UPLOAD_FOLDER'], imgName))
+            prop = Property(title = title,numbed = numberofbed, numbath = numberofbath
+                ,location = location, price = price, r_type = r_type, description =desc , photo = imgName)
+            db.session.add(prop)
+            db.session.commit()
+
+            flash('Property Successfully Uploaded', 'success')
+
+            return redirect(url_for('properties'))
+        
+    return render_template('create.html',form = form)
+
+@app.route('/uploads/<imgname>')
+def property_image(imgname):
+    return send_from_directory(os.path.join(os.getcwd(),app.config['UPLOAD_FOLDER']), imgname)
+
+@app.route('/properties')
+def properties():
+    prop = Property.query.all()
+    return render_template('properties.html',prop = prop)
+
+@app.route('/properties/<propertyid>')
+def propid(propertyid):
+
+    prop = Property.query.filter_by(id = int(propertyid)).first()
+    return render_template('property.html', prop = prop)
+
 
 # Display Flask WTF errors as Flash messages
 def flash_errors(form):

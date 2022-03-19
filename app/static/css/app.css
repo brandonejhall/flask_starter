@@ -1,3 +1,165 @@
 body {
     padding-top: 5rem;
 }
+
+.container{
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+
+
+.single{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    min-width: 100%;
+    max-height: 100%;
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;   
+    width: 25%;  
+    box-shadow: 5px 10px 8px #888888;  
+}
+
+.cards > .card-info>*{
+    margin-bottom: 30%;
+}
+.main-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:none;
+    min-width: 70%;
+    min-height: 100%;
+    border-style: solid;
+    border-color: #888888;
+    border-width: 0.0125rem;
+    border-radius: 0.25rem;
+}
+
+.pandr{
+    max-height: 15%;
+    display: flex;
+    flex-direction: row;
+}
+
+.pandr > *:first-child{
+    margin-right: 5%;
+}
+
+.left{
+    overflow: hidden;
+    display: flex;
+    min-width: 40%;
+    min-height: 100%;
+   
+    
+}
+.right{
+    min-width: 60%;
+    min-height: 100%;
+    padding-bottom: 5%;
+}
+.left > img{
+    
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+
+}
+
+.right{
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: column;
+    padding-left: 5%;
+}
+
+
+
+
+button{
+    border-style: none;
+    max-width: 20%;
+    height: 50px;
+    border-radius: 0.25rem;
+    background-color: #15B8A7;
+    color:white;
+}
+
+.cards > img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    min-width: 100%;
+    min-height: 100%;
+}
+.mainimg{
+    flex-shrink: 0%;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 0%;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.location{
+    display: flex;
+    flex-direction: row;
+}
+.pin{
+    max-height: 20px;
+    max-width:  20px;    
+}
+
+
+
+.price{
+    background-color: #5FA4FA;
+    color: white;
+    padding: 0% 10% 0% 10%;
+    border-radius: 25px;
+    width: fit-content;
+   
+}
+
+.type{
+    background-color: #FBBF23;
+    color: white;
+    padding: 0% 10% 0% 10%;
+    border-radius: 25px;
+   
+}
+.card-btn{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #15B8A7;
+    color: white;
+    min-width: 100%;
+    padding: 3%;
+}
+
+.property, .property:hover{
+    justify-self: center;
+    align-self: center;
+    text-decoration: none;
+    color: white;
+    min-width: 100%;
+    padding-left: 34%;
+}

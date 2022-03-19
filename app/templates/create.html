@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block main %}
+<form action = "" method = "POST"  enctype="multipart/form-data">
+    {{form.csrf_token}}
+    <div class = "data">
+        {{form.title.label}}
+        {{form.title()}}
+    </div>
+    <div class = "data">
+        {{form.numberofbed.label}}
+        {{form.numberofbed()}}
+    </div>
+    <div class = "data">
+        {{form.numberofbath.label}}
+        {{form.numberofbath()}}
+    </div>
+    <div class = "data">
+        {{form.location.label}}
+        {{form.location()}}
+    </div>
+    <div class = "data">
+        {{form.price.label}}
+        {{form.price()}}
+    </div>
+    <div class = "data">
+        {{form.residence_type.label}}
+        {{form.residence_type()}}
+    </div>
+    <div class = "data">
+        {{form.description.label}}
+        {{form.description()}}
+    </div>
+    <div class = "data">
+        {{form.image.label}}
+        {{form.image()}}
+    </div>
+    <div class = "data">
+        {{form.submit()}}
+    </div>
+    
+    
+    
+    
+
+
+
+</form>
+
+
+{% endblock %}
