@@ -214,14 +214,19 @@ form > .data{
     flex-direction: column;
     max-width: 22%;
 }
-form > button{
-    border-style: none;
+
+input, select{
+    border-radius: 0.25rem;
+    box-shadow: none;
+    min-height: 40px;
 }
 
-form > input{
-    width: 400px;
-    height: 240px;
-    margin: 8px 0;
-    box-sizing: border-box;
-
+#submit{
+    border-radius: 0.25rem;
+    border-style: none;
+    box-shadow: none;
+    min-height: 40px;
+    max-width:50%;
+    background-color: #0D6EFD;
+    color: white;
 }

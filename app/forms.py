@@ -15,5 +15,5 @@ class AddPropertyForm(FlaskForm):
     residence_type = SelectField(u'Type', choices=[('House', 'House'), ('Apartment', 'Apartment')])
     description = StringField('Description', widget=TextArea())
     image = FileField('Property Image', validators=[FileRequired(),FileAllowed(['jpg', 'png', 'jpeg'], 'Images only!')])
-    submit = SubmitField()
+    submit = SubmitField('Add Property')
     
