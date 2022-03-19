@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block main %}
-    
+<div class = "card">
     {% for p in prop %}
-        <div class = "card">
+        
             <div class =  "cards">
-                
-                <img src="{{ url_for('property_image',imgname=''+p.photo) }}" class = mainimg>
-                
+                <div class = mainimg >
+                    <img src="{{ url_for('property_image',imgname=''+p.photo) }}" >
+                </div>
                 <div class = "card-info">
                 <h4>{{p.title}}</h4>
                 <h6 class = "location"><img src = "/static/location.png" class ='pin'>      {{p.location}}</h6>
@@ -19,6 +19,7 @@
                 
                 
             </div>
-        </div>
+       
     {% endfor %}
+</div>
 {% endblock %}

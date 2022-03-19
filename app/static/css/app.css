@@ -25,29 +25,39 @@ body {
     min-width: 100%;
     max-height: 100%;
 }
+.card{
+    display: flex;
+    padding-left: 7%;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom:1%;
+}
 .cards{
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    justify-content: flex-end;
+    margin: 0% 1% 0% 1%;
+    padding-top: 1%;
     flex-direction: column;   
     width: 25%;  
     box-shadow: 5px 10px 8px #888888;  
 }
 
 .cards > .card-info>*{
-    margin-bottom: 30%;
+    margin-bottom: 5%;
 }
 .main-card{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items:none;
-    min-width: 70%;
+    min-width: 60%;
     min-height: 100%;
     border-style: solid;
     border-color: #888888;
     border-width: 0.0125rem;
     border-radius: 0.25rem;
+    box-shadow: 2.5px 5px 4px #888888;  
 }
 
 .pandr{
@@ -110,12 +120,15 @@ button{
     min-height: 100%;
 }
 .mainimg{
-    flex-shrink: 0%;
-    min-width: 100%;
-    min-height: 100%;
-    padding: 0%;
-    border-top-left-radius: 0.25rem;
-    border-top-right-radius: 0.25rem;
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+.mainimg>*{
+    height: 100%;
+    
+    object-fit: fill;
+    max-width: 100%;
 }
 
 .location{
@@ -162,4 +175,53 @@ button{
     color: white;
     min-width: 100%;
     padding-left: 34%;
+}
+
+
+.top-data>.data{
+    display: flex;
+    flex-direction: column;
+    border-style: none;
+    max-width: 47%;
+    min-height: 20px;
+    margin-top: 20px;
+}
+.top-data{
+    
+    min-width: 100%
+}
+.bottom-data{
+    max-width: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bottom-data > .data{
+    display: flex;
+    flex-direction: column;
+    padding-right: 6%;
+    padding-bottom: 5%;
+    max-width: 50%;
+    flex: 50%;
+}
+
+form > * {
+    margin-bottom: 2%;
+}
+form > .data{
+    display: flex;
+    flex-direction: column;
+    max-width: 22%;
+}
+form > button{
+    border-style: none;
+}
+
+form > input{
+    width: 400px;
+    height: 240px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
 }
